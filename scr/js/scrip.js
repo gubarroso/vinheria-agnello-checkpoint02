@@ -23,3 +23,7 @@ function classificarSafra(safra) {
     return "Vinho antigo";
   }
 }
+
+function estoqueBaixo(qtd) {
+  return qtd < 5;
+}
