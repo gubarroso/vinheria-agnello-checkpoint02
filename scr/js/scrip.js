@@ -14,3 +14,12 @@ function validarNumero(mensagem, condicaoExtra) {
   } while (isNaN(valor) || !condicaoExtra(Number(valor)));
   return Number(valor);
 }
+function classificarSafra(safra) {
+  if (safra >= 2020) {
+    return "Vinho jovem";
+  } else if (safra >= 2015) {
+    return "Vinho amadurecido";
+  } else {
+    return "Vinho antigo";
+  }
+}
