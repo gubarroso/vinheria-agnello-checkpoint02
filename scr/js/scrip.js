@@ -27,3 +27,18 @@ function classificarSafra(safra) {
 function estoqueBaixo(qtd) {
   return qtd < 5;
 }
+
+function exibirDados(nome, tipo, safra, estoque, classificacao, statusEstoque) {
+  alert("Veja os detalhes no console");
+  console.log("======= Cadastro de Vinho =======");
+  console.log("Nome: " + nome);
+  console.log("Tipo: " + tipo);
+  console.log("Safra: " + safra + " (" + classificacao + ")");
+  console.log("Quantidade em estoque: " + estoque);
+  if (statusEstoque) {
+    console.log("⚠️ ESTOQUE BAIXO");
+  } else {
+    console.log("Estoque adequado");
+  }
+  console.log("");
+}
