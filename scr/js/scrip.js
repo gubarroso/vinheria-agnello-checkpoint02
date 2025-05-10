@@ -42,3 +42,34 @@ function exibirDados(nome, tipo, safra, estoque, classificacao, statusEstoque) {
   }
   console.log("");
 }
+
+// Início do programa
+alert("Bem-vindo ao gerenciador de estoque da Agnello's");
+  
+let continuar = true;
+let contador = 0;
+let estoqueBaixoCount = 0;
+
+let nomeMaisAntigo = "";
+let safraMaisAntiga = null;
+
+while (continuar) {
+  contador++;
+
+  // Cadastro
+  alert("Cadastro #" + contador);
+
+  const nome = pedirInformacao("Digite o nome do vinho:");
+
+  let tipo;
+  do {
+    tipo = pedirInformacao("Digite o tipo do vinho (Tinto, Branco ou Rosé):").toLowerCase();
+  } while (tipo !== "tinto" && tipo !== "branco" && tipo !== "rosé" && tipo !== "rose");
+  tipo = tipo.charAt(0).toUpperCase() + tipo.slice(1);
+
+  const safra = validarNumero("Digite o ano da safra:", valor => valor > 0);
+  const estoque = validarNumero("Digite a quantidade em estoque:", valor => valor >= 0);
+
+  const classificacao = classificarSafra(safra);
+  const estaComEstoqueBaixo = estoqueBaixo(estoque);
+  }
