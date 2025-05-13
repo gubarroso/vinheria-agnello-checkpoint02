@@ -73,3 +73,32 @@ while (continuar) {
   const classificacao = classificarSafra(safra);
   const estaComEstoqueBaixo = estoqueBaixo(estoque);
   }
+
+    // Contagem de estoque baixo
+    if (estaComEstoqueBaixo) {
+      estoqueBaixoCount++;
+    }
+  
+    // Verifica safra mais antiga
+    if (safraMaisAntiga === null || safra < safraMaisAntiga) {
+      safraMaisAntiga = safra;
+      nomeMaisAntigo = nome;
+    }
+  
+    // Exibição
+    exibirDados(nome, tipo, safra, estoque, classificacao, estaComEstoqueBaixo);
+  
+    // Pergunta se deseja continuar
+    let resposta;
+    do {
+      resposta = pedirInformacao("Deseja cadastrar outro vinho? (sim/não)").toLowerCase();
+    } while (resposta !== "sim" && resposta !== "nao" && resposta !== "não");
+    continuar = (resposta === "sim");
+  
+  
+  // Resumo final
+  alert("Resumo dos cadastros exibido no console!");
+  console.log("======= Resumo Final =======");
+  console.log("Total de cadastros: " + contador);
+  console.log("Vinhos com estoque baixo: " + estoqueBaixoCount);
+  console.log("Vinho com safra mais antiga: " + nomeMaisAntigo + " (Safra " + safraMaisAntiga + ")");
