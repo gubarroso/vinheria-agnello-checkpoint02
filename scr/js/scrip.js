@@ -72,7 +72,7 @@ while (continuar) {
 
   const classificacao = classificarSafra(safra);
   const estaComEstoqueBaixo = estoqueBaixo(estoque);
-  }
+  
 
     // Contagem de estoque baixo
     if (estaComEstoqueBaixo) {
@@ -94,7 +94,8 @@ while (continuar) {
       resposta = pedirInformacao("Deseja cadastrar outro vinho? (sim/não)").toLowerCase();
     } while (resposta !== "sim" && resposta !== "nao" && resposta !== "não");
     continuar = (resposta === "sim");
-  
+  }
+
   
   // Resumo final
   alert("Resumo dos cadastros exibido no console!");
